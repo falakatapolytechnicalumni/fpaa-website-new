@@ -355,7 +355,9 @@ footer .glass{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 @media (max-width:720px){.vgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:440px){.vgrid{grid-template-columns:1fr}}
 
-header.top.scrolled .bar{background:rgba(255,255,255,.78)}
+header.top .bar{background:rgba(255,255,255,.86)!important;-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%)}
+header.top.scrolled .bar{background:rgba(255,255,255,.94)!important}
+header.top{isolation:isolate}
 .contact>*{min-width:0}
 .contact span{overflow-wrap:anywhere}
 @media (max-width:600px){
@@ -736,9 +738,15 @@ const hdr=document.querySelector('header.top');
 const onScroll=()=>hdr.classList.toggle('scrolled',scrollY>40);
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 const navLinks=[...document.querySelectorAll('#mainNav a')];
-const secMap=new Map(navLinks.map(a=>[a.getAttribute('href').slice(1),a]));
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.removeAttribute('aria-current'));const a=secMap.get(e.target.id);if(a)a.setAttribute('aria-current','true')}})},{rootMargin:'-45% 0px -50% 0px'});
-secMap.forEach((a,id)=>{const el=document.getElementById(id);if(el)io.observe(el)});
+const secs=navLinks.map(a=>[a,document.getElementById(a.getAttribute('href').slice(1))]).filter(x=>x[1]);
+function markActive(){
+  const line=hdr.getBoundingClientRect().bottom+40;let cur=null;
+  for(const [a,el] of secs){if(el.getBoundingClientRect().top<=line)cur=a}
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1][0];
+  navLinks.forEach(a=>a===cur?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'));
+}
+let raf=0;addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;markActive()})},{passive:true});
+addEventListener('resize',markActive);markActive();
 
 })();
 </script>

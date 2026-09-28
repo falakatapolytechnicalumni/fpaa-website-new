@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FPAA Connect 2.0 | Falakata Polytechnic Alumni Association</title>
+<meta name="description" content="FPAA Connect 2.0 is the official platform of the Falakata Polytechnic Alumni Association (Regd. No. S0058184 of 2025-26), Falakata, Alipurduar, West Bengal. Connect, contribute and grow together.">
+<link rel="canonical" href="https://www.fpaaconnect.co.in/">
+<meta name="theme-color" content="#1b7a47">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FPAA Connect 2.0">
+<meta property="og:title" content="FPAA Connect 2.0 | Falakata Polytechnic Alumni Association">
+<meta property="og:description" content="FPAA Connect 2.0 is the official platform of the Falakata Polytechnic Alumni Association (Regd. No. S0058184 of 2025-26), Falakata, Alipurduar, West Bengal. Connect, contribute and grow together.">
+<meta property="og:url" content="https://www.fpaaconnect.co.in/">
+<meta property="og:image" content="https://www.fpaaconnect.co.in/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Falakata Polytechnic Alumni Association", "alternateName": ["FPAA", "FPAA Connect 2.0"], "url": "https://www.fpaaconnect.co.in/", "logo": "https://www.fpaaconnect.co.in/favicon.png", "email": "falakatapolytechnicalumni@gmail.com", "foundingDate": "2024", "address": {"@type": "PostalAddress", "addressLocality": "Falakata", "addressRegion": "West Bengal", "addressCountry": "IN"}}</script>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --void:#eef8ef; --ink:#123322; --muted:#46654f; --faint:#7b9484; --deep:#1b7a47;
+  --blue:#2fa865; --violet:#1f7a5a; --teal:#5cc98a; --amber:#9ed36a;
+  --glass:rgba(255,255,255,.34); --glass-strong:rgba(255,255,255,.62);
+  --edge:rgba(255,255,255,.75); --edge-hi:rgba(255,255,255,.95);
+  --display:"Unbounded","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0;font-weight:700}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.01em}
+h3{font-size:1.02rem;font-weight:500;letter-spacing:.01em}
+p{margin:0}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* ---- MorphFlow field ---- */
+#flow{position:fixed;inset:0;width:100%;height:100%;z-index:0;filter:blur(6px);transform:scale(1.04)}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background:radial-gradient(ellipse at 50% -10%,rgba(255,255,255,.6),transparent 60%)}
+main,header,footer{position:relative;z-index:2}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:20px}
+
+/* ---- Liquid glass ---- */
+.glass{
+  position:relative;background:linear-gradient(160deg,var(--glass-strong),var(--glass) 55%,rgba(255,255,255,.03));
+  -webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+  border:1px solid var(--edge);border-radius:var(--r);
+  box-shadow:inset 0 1px 0 var(--edge-hi),inset 0 -1px 0 rgba(255,255,255,.05),
+             inset 0 0 24px rgba(255,255,255,.035),0 24px 50px -22px rgba(27,90,55,.35);
+  isolation:isolate;
+}
+.glass::before{ /* specular sheen following pointer */
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:radial-gradient(420px circle at var(--mx,30%) var(--my,0%),rgba(255,255,255,.14),transparent 45%);
+  transition:opacity .3s;
+}
+.glass::after{ /* refracted rim */
+  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(47,168,101,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+}
+.tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.tilt.live{transition:transform .08s linear}
+
+.eyebrow{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--deep)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:.8rem 1.35rem;border-radius:999px;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid var(--edge);color:var(--ink)}
+.btn-prime{background:linear-gradient(135deg,var(--amber),#3f9f58);color:#fff;border-color:rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 26px -8px rgba(31,122,72,.55)}
+.btn-glass{background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 var(--edge-hi)}
+.btn:hover{filter:brightness(1.08)}
+
+/* ---- header ---- */
+header.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);margin-top:12px;padding-inline:12px}
+.bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 14px;border-radius:999px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.seal{width:52px;height:52px;border-radius:50%;overflow:hidden;background:#fff!important;box-shadow:0 0 0 2px #1b7a47,0 6px 14px -4px rgba(15,60,35,.45)!important;display:grid;place-items:center;font-family:var(--display);font-size:.8rem;color:#fff;
+  background:radial-gradient(circle at 30% 25%,#fff8,transparent 40%),linear-gradient(135deg,var(--blue),var(--violet));box-shadow:inset 0 0 0 1px #fff4}
+.brand b{font-family:var(--display);font-weight:500;font-size:.92rem;display:block;line-height:1.2}
+.brand small{color:var(--muted);font-size:.74rem}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+nav a{display:block;text-decoration:none;font-weight:500;font-size:.92rem;padding:8px 14px;border-radius:999px;color:var(--muted)}
+nav a:hover{color:var(--ink);background:rgba(255,255,255,.6)}
+.menu-btn{display:none;font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.6);color:var(--ink);border:1px solid var(--edge)}
+@media (max-width:880px){
+  .menu-btn{display:block}
+  #mainNav{position:absolute;left:0;right:0;top:calc(100% + 8px);border-radius:var(--r);padding:10px}
+  nav ul{flex-direction:column}
+  nav a{padding:12px 16px}
+}
+
+/* ---- hero ---- */
+.hero{padding-block:72px 40px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.9rem);letter-spacing:-.02em;margin-block:16px 20px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal),var(--blue) 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.14rem;color:var(--muted);max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* 3D glass stack */
+.stage{height:420px;perspective:1200px;display:grid;place-items:center}
+.medal{position:relative;width:320px;aspect-ratio:1;max-width:100%;transform-style:preserve-3d;transform:rotateX(var(--sx,10deg)) rotateY(var(--sy,-18deg));transition:transform .6s cubic-bezier(.2,.8,.2,1);animation:bob 7s ease-in-out infinite}
+.medal .face,.medal .depth i,.medal .back{position:absolute;inset:0;border-radius:34px}
+.medal .depth{position:absolute;inset:0;transform-style:preserve-3d}
+.medal .depth i{transform:translateZ(var(--z));background:linear-gradient(135deg,#d9b25a,#7a5a1c 45%,#0f3b22)}
+.medal .back{transform:translateZ(-22px);background:#0b2a18;box-shadow:0 40px 70px -20px rgba(15,60,35,.55)}
+.medal .face{transform:translateZ(1px);overflow:hidden;background:#0d3b22 center/cover no-repeat;box-shadow:inset 0 0 0 2px rgba(255,226,150,.65),inset 0 2px 0 rgba(255,255,255,.5)}
+.medal .face img{width:100%;height:100%;display:block;object-fit:cover}
+.medal .sheen{position:absolute;inset:0;border-radius:34px;transform:translateZ(2px);pointer-events:none;mix-blend-mode:screen;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,240,200,.55) 45%,transparent 60%) var(--shx,0%) 0/250% 100% no-repeat,
+             radial-gradient(circle at var(--gx,30%) var(--gy,20%),rgba(255,255,255,.35),transparent 45%);animation:shine 6s ease-in-out infinite}
+.medal .frame{position:absolute;inset:-26px;border-radius:48px;transform:translateZ(-40px)}
+.medal .halo{position:absolute;inset:-60px;border-radius:50%;transform:translateZ(-80px);background:radial-gradient(circle,rgba(255,215,120,.35),transparent 65%);filter:blur(10px)}
+@keyframes shine{0%,100%{background-position:120% 0,0 0}50%{background-position:-20% 0,0 0}}
+.tagline{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tagline span{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;color:var(--deep)}
+.stack{position:relative;width:260px;height:260px;transform-style:preserve-3d;transform:rotateX(var(--sx,18deg)) rotateY(var(--sy,-24deg));transition:transform .6s cubic-bezier(.2,.8,.2,1);animation:bob 7s ease-in-out infinite}
+.slab{position:absolute;inset:0;border-radius:36px;display:grid;place-items:center}
+.slab.s1{transform:translateZ(-70px) scale(.86);background:linear-gradient(135deg,rgba(61,107,255,.35),rgba(23,209,193,.15))}
+.slab.s2{transform:translateZ(0)}
+.slab.s3{transform:translateZ(70px) scale(.8);border-radius:50%}
+.slab.s3 span{font-family:var(--display);font-size:2.6rem;font-weight:700;background:linear-gradient(160deg,#1b7a47,#123322);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slab.s2 .ring{width:78%;height:78%;border-radius:50%;border:1px dashed rgba(27,122,71,.35)}
+.orbit{position:absolute;inset:-40px;border-radius:50%;border:1px solid rgba(27,122,71,.25);transform:rotateX(72deg) translateZ(0);transform-style:preserve-3d;animation:spin 18s linear infinite}
+.orbit i{position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--amber);box-shadow:0 0 18px var(--amber)}
+@keyframes bob{50%{translate:0 -12px}}
+@keyframes spin{to{transform:rotateX(72deg) rotateZ(360deg)}}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr}.stage{height:320px;order:-1}.medal{width:230px}}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;padding:6px}
+.facts div{padding:18px 20px;border-right:1px solid rgba(27,122,71,.15)}
+.facts div:last-child{border-right:0}
+.facts strong{font-family:var(--display);font-weight:500;font-size:1.8rem;display:block;font-variant-numeric:tabular-nums}
+.facts span{color:var(--muted);font-size:.9rem}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid rgba(27,122,71,.15)}}
+
+.notice{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:12px 18px;border-radius:999px;margin-top:20px;font-size:.95rem}
+.notice b{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,var(--amber),#3f9f58);color:#fff}
+
+/* ---- sections ---- */
+section{padding-block:64px}
+section[id]{scroll-margin-top:100px}
+.head{display:grid;gap:10px;margin-bottom:32px;max-width:640px}
+.head p{color:var(--muted)}
+.note{color:var(--faint);font-size:.85rem;font-style:italic}
+
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.panel{padding:30px}
+.about .text{display:grid;gap:16px;max-width:62ch;color:var(--ink)}
+.vm{display:grid;gap:20px}
+.vm h3{color:var(--deep);margin-bottom:6px}
+.vm p{color:var(--muted)}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+
+.obj{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;margin:0;list-style:none}
+.obj li{padding:24px;display:grid;gap:8px;align-content:start}
+.obj .dot{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:inset 0 1px 0 #fff6,0 8px 20px -6px var(--c1);margin-bottom:6px}
+.obj p{color:var(--muted);font-size:.96rem}
+@media (max-width:880px){.obj{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.obj{grid-template-columns:1fr}}
+
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.member{padding:26px 22px;display:grid;gap:4px;justify-items:start}
+.avatar{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--display);font-size:1.05rem;margin-bottom:12px;
+  background:radial-gradient(circle at 30% 25%,#fff7,transparent 42%),linear-gradient(135deg,var(--c1),var(--c2));box-shadow:inset 0 0 0 1px #fff4,0 12px 26px -10px var(--c1)}
+.member .role{color:var(--deep);font-weight:600;font-size:.9rem}
+.member .sub{color:var(--muted);font-size:.9rem}
+@media (max-width:920px){.team{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.team{grid-template-columns:1fr}}
+
+.events{display:grid;gap:12px}
+.event{display:grid;grid-template-columns:84px 1fr auto;gap:22px;align-items:center;padding:16px 22px 16px 16px}
+.date{text-align:center;border-radius:16px;padding:10px 0;background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 var(--edge-hi)}
+.date b{font-family:var(--display);font-weight:500;font-size:1.6rem;display:block;line-height:1;font-variant-numeric:tabular-nums}
+.date span{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.event p{color:var(--muted);font-size:.95rem}
+.tag{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:999px;white-space:nowrap;border:1px solid var(--edge)}
+.tag.up{color:var(--deep);background:rgba(47,168,101,.14)}
+.tag.done{color:var(--muted)}
+@media (max-width:620px){.event{grid-template-columns:68px 1fr}.event .tag{grid-column:2;justify-self:start}}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ph{aspect-ratio:4/5;max-width:100%;display:flex;align-items:flex-end;padding:16px;font-weight:600;overflow:hidden}
+.ph .blob{position:absolute;inset:18% 12% 30%;border-radius:42% 58% 63% 37%/45% 38% 62% 55%;background:linear-gradient(135deg,var(--c1),var(--c2));filter:blur(2px);opacity:.85;z-index:-2;animation:morph 12s ease-in-out infinite}
+.ph:nth-child(2) .blob{animation-delay:-3s}.ph:nth-child(3) .blob{animation-delay:-6s}.ph:nth-child(4) .blob{animation-delay:-9s}
+@keyframes morph{50%{border-radius:61% 39% 35% 65%/58% 62% 38% 42%;transform:rotate(25deg) scale(1.08)}}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
+
+.join{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:start}
+.plans{display:grid;gap:12px}
+.plan{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 22px}
+.plan p{color:var(--muted);font-size:.92rem}
+.plan strong{font-family:var(--display);font-weight:500;font-size:1.15rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.plan.best{border-color:rgba(27,122,71,.45)}
+form{display:grid;gap:14px;padding:26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:500;font-size:.9rem;color:var(--ink)}
+input,select,textarea{font:inherit;padding:.75rem .95rem;border-radius:14px;border:1px solid var(--edge);background:rgba(255,255,255,.7);color:var(--ink);width:100%;box-shadow:inset 0 2px 6px rgba(27,90,55,.1)}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+select option{background:#fff}
+.toast{padding:12px 16px;border-radius:14px;background:rgba(47,168,101,.14);border:1px solid rgba(27,122,71,.4);font-size:.95rem}
+@media (max-width:840px){.join{grid-template-columns:1fr}}
+@media (max-width:480px){.row{grid-template-columns:1fr}}
+
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact .glass{padding:24px;display:grid;gap:4px;align-content:start}
+.k{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--deep);font-weight:600}
+@media (max-width:740px){.contact{grid-template-columns:1fr}}
+
+footer{padding-block:24px 36px}
+footer .glass{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:16px 22px;border-radius:999px;color:var(--muted);font-size:.9rem}
+
+
+/* ---- v4 additions ---- */
+.quote{padding:26px 28px;display:grid;gap:8px}
+.quote p{font-family:var(--display);font-size:1.25rem;line-height:1.3;color:var(--deep)}
+.quote small{color:var(--muted)}
+.campus{padding:10px;overflow:hidden}
+.campus img{display:block;width:100%;height:100%;min-height:220px;object-fit:cover;border-radius:16px}
+.campus figcaption{padding:10px 8px 2px;color:var(--muted);font-size:.88rem}
+.vision{margin-top:20px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.vision blockquote{margin:0;font-family:var(--display);font-weight:500;font-size:1.15rem;line-height:1.4;color:var(--ink)}
+.vision ul{margin:0;padding-left:1.1em;display:grid;gap:6px;color:var(--muted)}
+@media (max-width:820px){.vision{grid-template-columns:1fr}}
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0;margin:0;list-style:none}
+.goals li{padding:22px;display:grid;gap:6px;align-content:start}
+.goals .n{font-family:var(--display);font-size:.8rem;color:var(--deep);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.goals p{color:var(--muted);font-size:.94rem}
+@media (max-width:900px){.goals{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.goals{grid-template-columns:1fr}}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.values div{padding:12px 18px;border-radius:18px;display:grid;gap:2px;flex:1 1 220px}
+.values b{font-family:var(--display);font-weight:500;font-size:.85rem;letter-spacing:.12em;color:var(--deep)}
+.values span{color:var(--muted);font-size:.9rem}
+.commit{margin-top:20px;padding:28px;display:grid;gap:10px}
+.commit p{color:var(--muted);max-width:70ch}
+.commit strong{font-family:var(--display);font-weight:500;color:var(--deep)}
+.flow{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.flow span{padding:10px 16px;border-radius:999px;font-weight:600;font-size:.92rem}
+.flow i{font-style:normal;color:var(--deep)}
+.schemes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.scheme{padding:24px;display:grid;gap:12px;align-content:start}
+.scheme .top{display:flex;gap:14px;align-items:center}
+.scheme .por{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 5px #d9b25a,0 12px 24px -10px rgba(15,60,35,.5)}
+.scheme .cat{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--deep)}
+.scheme h3{font-size:1rem;line-height:1.3}
+.scheme .bn{font-size:.85rem;color:var(--muted)}
+.scheme > p{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(47,168,101,.13);color:var(--ink);border:1px solid rgba(27,122,71,.25)}
+.scheme details{border-top:1px solid rgba(27,122,71,.15);padding-top:10px}
+.scheme summary{cursor:pointer;font-weight:600;color:var(--deep);font-size:.92rem}
+.scheme dl{margin:10px 0 0;display:grid;gap:10px;font-size:.9rem}
+.scheme dt{font-weight:600}
+.scheme dd{margin:2px 0 0;color:var(--muted)}
+@media (max-width:980px){.schemes{grid-template-columns:1fr}}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cats .fine{grid-column:1/-1}
+@media (max-width:880px){.cats{grid-template-columns:1fr}}
+.cat-card{flex-direction:column;align-items:flex-start!important}
+.cat-card strong small{text-align:left}
+.brand .regd{display:block;font-size:.7rem;color:var(--deep);font-weight:600}
+.seal img{display:block;width:100%;height:100%;object-fit:contain}
+.cat-card{font:inherit;color:inherit;text-align:left;width:100%;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 22px;}
+.cat-card p{color:var(--muted);font-size:.92rem}
+.cat-card strong{font-family:var(--display);font-weight:500;font-size:1.05rem;white-space:nowrap}
+.cat-card small{display:block;color:var(--muted);font-size:.75rem;text-align:right}
+.cat-card[aria-pressed="true"]{border-color:rgba(27,122,71,.6);box-shadow:inset 0 1px 0 var(--edge-hi),0 0 0 2px rgba(47,168,101,.35),0 24px 50px -22px rgba(27,90,55,.35)}
+.fine{color:var(--muted);font-size:.86rem}
+.contact a{color:var(--deep);word-break:break-all}
+
+.apply{margin-top:26px;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.apply-text{display:grid;gap:6px;max-width:60ch}
+.apply h3{font-size:1.25rem;font-weight:700}
+.apply p{color:var(--muted)}
+.apply .url{font-size:.85rem;font-weight:600;color:var(--deep);user-select:all}
+.apply-btn{font-size:1.02rem;padding:1rem 1.6rem}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;gap:14px}
+.pw{margin:0;padding:8px;overflow:hidden;position:relative}
+.pw.big{grid-column:span 2;grid-row:span 2}
+.pw img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pw:hover img{transform:scale(1.04)}
+.pw figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:10px 14px;border-radius:14px;display:grid;gap:2px;
+  background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 #fff,0 10px 24px -14px rgba(15,60,35,.5)}
+.pw figcaption b{font-family:var(--display);font-weight:500;font-size:.9rem;color:var(--ink)}
+.pw figcaption span{font-size:.82rem;color:var(--muted);line-height:1.35}
+.pw:not(.big) figcaption span{display:none}
+.pw:not(.big):hover figcaption span{display:block}
+@media (max-width:860px){.pgrid{grid-template-columns:1fr 1fr;grid-auto-rows:200px}}
+@media (max-width:520px){.pgrid{grid-template-columns:1fr;grid-auto-rows:240px}.pw.big{grid-column:auto;grid-row:span 1}.pw figcaption span{display:block}}
+.team{grid-template-columns:repeat(5,1fr)!important}
+.member h3{font-size:.95rem;line-height:1.3}
+.member .phone{font-variant-numeric:tabular-nums;user-select:all;margin-top:4px}
+@media (max-width:1060px){.team{grid-template-columns:repeat(3,1fr)!important}}
+@media (max-width:720px){.team{grid-template-columns:1fr 1fr!important}}
+@media (max-width:420px){.team{grid-template-columns:1fr!important}}
+.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.rcard{padding:20px 22px;display:grid;gap:6px;text-decoration:none;color:var(--ink);align-content:start}
+.rcard .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--deep)}
+.rcard b{font-weight:500;font-size:.95rem;line-height:1.45}
+.rcard .host{font-size:.85rem;color:var(--deep);font-weight:600;margin-top:4px}
+.rcard:hover .host{text-decoration:underline}
+@media (max-width:900px){.resources{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.resources{grid-template-columns:1fr}}
+.ltabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.ltab{font:inherit;font-weight:600;font-size:.9rem;padding:9px 16px;border-radius:999px;border:1px solid var(--edge);background:rgba(255,255,255,.55);color:var(--ink);cursor:pointer;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.ltab[aria-pressed="true"]{background:linear-gradient(135deg,#2fa865,#1b7a47);color:#fff;border-color:rgba(255,255,255,.6)}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.dcard{padding:22px;display:grid;gap:8px;align-content:start}
+.dcard ul{margin:0;padding-left:1.1em;display:grid;gap:4px;color:var(--muted);font-size:.94rem}
+.dcard .lnk{font-size:.88rem;font-weight:600;color:var(--deep);margin-top:6px}
+.enq-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-weight:600;padding:.85rem 1.3rem;border-radius:999px;cursor:pointer;color:#fff;
+  background:linear-gradient(135deg,#2fa865,#1b7a47);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 14px 30px -10px rgba(15,60,35,.6);display:flex;gap:8px;align-items:center}
+.enq-fab[aria-expanded="true"]{display:none}
+.enq-panel{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:31;width:min(360px,calc(100vw - 36px));max-height:calc(100dvh - 120px);overflow:auto;padding:20px;display:grid;gap:10px;background:rgba(255,255,255,.82)!important}
+.enq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.enq-head h3{font-size:1.1rem;font-weight:700}
+.enq-x{font:inherit;font-size:1.5rem;line-height:1;width:36px;height:36px;border-radius:50%;border:1px solid var(--edge);background:rgba(255,255,255,.7);color:var(--ink);cursor:pointer}
+#enqForm{display:grid;gap:10px;padding:0;background:none;border:0;box-shadow:none}
+#enqForm label{font-size:.85rem}
+#enqForm input,#enqForm select,#enqForm textarea{padding:.6rem .8rem;border-radius:12px}
+.opt{font-weight:400;color:var(--muted)}
+.enq-fallback{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.enq-fallback button,.enq-fallback a{font:inherit;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(27,122,71,.4);background:#fff;color:var(--deep);cursor:pointer;text-decoration:none}
+.subh{font-size:1.05rem;font-weight:500;margin:0 0 14px;color:var(--deep)}
+.vgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:34px}
+.vbox{padding:8px;display:grid;gap:0;text-decoration:none;color:var(--ink);align-content:start}
+.vthumb{position:relative;aspect-ratio:16/10;max-width:100%;border-radius:16px;overflow:hidden}
+.vthumb>svg{display:block;width:100%;height:100%}
+.play{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#e02424;background:rgba(255,255,255,.92);box-shadow:0 10px 24px -8px rgba(0,0,0,.45);transition:transform .3s}
+.play svg{width:26px;height:26px;margin-left:3px}
+.vbox:hover .play{transform:scale(1.1)}
+.badge{position:absolute;left:10px;top:10px;font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--deep)}
+.vbody{padding:12px 8px 8px;display:grid;gap:3px}
+.vbody .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--deep)}
+.vbody h3{font-size:1rem}
+.vbody .host{font-size:.85rem;font-weight:600;color:var(--deep)}
+.vbody .muted{color:var(--muted);font-weight:500}
+.vbox.soon .vthumb>svg{filter:saturate(.6);opacity:.75}
+@media (max-width:1100px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.vgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.vgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .medal,.medal .sheen,.ph .blob{animation:none}
+  .tilt{transition:none}
+}
+</style>
+
+<canvas id="flow" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="bar glass">
+    <a class="brand" href="#home">
+      <span class="seal"><img src="assets/img-c1cd5dd522.png" alt="Falakata Polytechnic Alumni Association logo" width="52" height="52"></span>
+      <span><b>FPAA Connect 2.0</b><small>Falakata Polytechnic Alumni Association</small><small class="regd">Regd. No. S0058184 of 2025-26</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#committee">Committee</a></li>
+        <li><a href="#scheme">Sponsored Scheme</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Welcome to FPAA Connect 2.0 · Estd 2024 · Regd. No. S0058184 of 2025-26</div>
+      <h1>Falakata Polytechnic <em>Alumni Association</em></h1>
+      <p class="lead">A platform to unite our alumni, celebrate our legacy and build a stronger tomorrow for Falakata Polytechnic.</p>
+      <div class="tagline"><span class="glass">Connect</span><span class="glass">Contribute</span><span class="glass">Grow together</span></div>
+      <div class="ctas">
+        <a class="btn btn-prime" href="#join">Join as Alumni</a>
+        <a class="btn btn-glass" href="#scheme">Sponsored Scheme</a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="medal" id="stack">
+        <div class="halo"></div>
+        <div class="frame glass"></div>
+        <div class="back"></div>
+        <div class="depth"><i style="--z:-2px"></i><i style="--z:-4px"></i><i style="--z:-6px"></i><i style="--z:-8px"></i><i style="--z:-10px"></i><i style="--z:-12px"></i><i style="--z:-14px"></i><i style="--z:-16px"></i><i style="--z:-18px"></i><i style="--z:-20px"></i></div>
+        <div class="face"><img src="assets/img-6ed3663741.jpg" alt="Falakata Polytechnic Alumni Association emblem, established 2024"></div>
+        <div class="sheen"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts glass tilt" aria-label="FPAA at a glance">
+      <div><strong>1200+</strong><span>Alumni members</span></div>
+      <div><strong>25 yrs</strong><span>Of legacy, 2001–2026</span></div>
+      <div><strong>5</strong><span>Departments</span></div>
+      <div><strong>3</strong><span>Sponsored schemes</span></div>
+    </div>
+    <div class="notice glass"><b>Open</b><span>Alumni membership registration is open. One-time fee ₹100, reviewed by the Registration Committee.</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">About FPAA</div><h2>Connecting the past. Empowering the present. Building the future.</h2></div>
+    <div class="about">
+      <div class="panel glass tilt text">
+        <p>The Falakata Polytechnic Alumni Association (FPAA) is a united community of former students of Falakata Polytechnic, connected by a shared institution, cherished memories, lifelong friendships and a commitment to giving back.</p>
+        <p>FPAA was established to build a strong, inclusive, transparent and sustainable alumni network that brings together alumni, students, faculty, the institution and the wider community, through networking, knowledge sharing, mentorship, career support and social initiatives.</p>
+        <p>FPAA Connect 2.0 is the digital extension of this vision: one place for alumni to stay connected, discover opportunities, take part in association activities and stay close to their alma mater.</p>
+      </div>
+      <div style="display:grid;gap:20px">
+        <figure class="campus glass tilt" style="margin:0"><img src="assets/img-ec838fa66b.jpg" alt="Falakata Polytechnic campus main building"><figcaption>Falakata Polytechnic, Govt. of West Bengal · Estd 2001</figcaption></figure>
+        <div class="quote glass tilt"><p>Once a Falakata Polytechnician, always a family.</p><small>Our roots. Our people. Our pride.</small></div>
+      </div>
+    </div>
+    <div class="vision">
+      <div class="panel glass tilt"><div class="eyebrow" style="margin-bottom:10px">Our vision</div><blockquote>To build a connected, empowered and globally recognised Falakata Polytechnic alumni community that contributes meaningfully to the growth of its members, students and institution.</blockquote></div>
+      <div class="panel glass tilt"><div class="eyebrow" style="margin-bottom:10px">We envision a network where</div><ul>
+        <li>Every alumnus stays meaningfully connected with the institute.</li>
+        <li>Alumni from every batch, department and profession can easily connect.</li>
+        <li>Students benefit from alumni guidance and professional networks.</li>
+        <li>Knowledge and skills are shared for collective development.</li>
+        <li>The legacy of Falakata Polytechnic is preserved and its future strengthened.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Alumni association goals</div><h2>Our 12 strategic goals</h2></div>
+    <ul class="goals"><li class="glass tilt"><span class="n">01</span><h3>Build a strong alumni network</h3><p>An organised, growing network connecting alumni across batches, departments, professions, locations and generations.</p></li><li class="glass tilt"><span class="n">02</span><h3>Strengthen alumni–institution relations</h3><p>A continuous channel between alumni and Falakata Polytechnic for mutual development and institutional progress.</p></li><li class="glass tilt"><span class="n">03</span><h3>Support current students</h3><p>Mentorship, career guidance, internships, industrial exposure and skill development for students.</p></li><li class="glass tilt"><span class="n">04</span><h3>Promote professional networking</h3><p>Connect alumni by profession, industry, expertise and interest for collaboration and opportunities.</p></li><li class="glass tilt"><span class="n">05</span><h3>Create a knowledge-sharing community</h3><p>Share experience, technical knowledge, industry insight and learning resources with students and fellow alumni.</p></li><li class="glass tilt"><span class="n">06</span><h3>Encourage career and employment</h3><p>Share jobs, internships, recruitment information and career guidance within the community.</p></li><li class="glass tilt"><span class="n">07</span><h3>Encourage entrepreneurship</h3><p>Support alumni entrepreneurs through collaboration, business networking and partnerships.</p></li><li class="glass tilt"><span class="n">08</span><h3>Preserve institutional heritage</h3><p>Protect and celebrate the history, memories, achievements and traditions of Falakata Polytechnic.</p></li><li class="glass tilt"><span class="n">09</span><h3>Organise meaningful activities</h3><p>Reunions, seminars, workshops, mentorship, sports, cultural and social programmes.</p></li><li class="glass tilt"><span class="n">10</span><h3>Stay transparent and inclusive</h3><p>Responsible administration, equal participation and clear communication for every alumnus.</p></li><li class="glass tilt"><span class="n">11</span><h3>Support the institution's development</h3><p>Collaborate on infrastructure, academics, student welfare, technical education and industry interaction.</p></li><li class="glass tilt"><span class="n">12</span><h3>Build a digital alumni ecosystem</h3><p>Through FPAA Connect 2.0: registration, networking, events, announcements and association management online.</p></li></ul>
+    <div class="head" style="margin:48px 0 0"><div class="eyebrow">Core values</div><h2>What guides FPAA</h2></div>
+    <div class="values"><div class="glass"><b>CONNECT</b><span>Keeping alumni, students and the institution connected beyond graduation.</span></div><div class="glass"><b>CONTRIBUTE</b><span>Giving back through knowledge, experience, resources, time and service.</span></div><div class="glass"><b>COLLABORATE</b><span>Creating opportunities through professional and community collaboration.</span></div><div class="glass"><b>GROW</b><span>Helping alumni, students and the institution progress together.</span></div><div class="glass"><b>PRESERVE</b><span>Protecting the heritage, memories and legacy of Falakata Polytechnic.</span></div><div class="glass"><b>EMPOWER</b><span>Creating opportunities for students and alumni to reach their potential.</span></div><div class="glass"><b>TRANSPARENCY</b><span>Building trust through open and accountable association activities.</span></div></div>
+    <div class="commit glass"><div class="eyebrow">Our commitment</div><strong>A living community</strong>
+      <p>FPAA is more than an alumni directory. It is a community where yesterday's students guide today's, where professional experience becomes someone's opportunity, and where old friendships create new collaborations.</p>
+      <p>Our journey began at Falakata Polytechnic. Our connection continues for life. Our future is something we build together.</p></div>
+  </div>
+</section>
+
+<section id="committee">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Registration Committee</div><h2>Registration Committee Members</h2><p>The committee reviews membership applications, verifies payments, approves members and manages the Sponsored Scheme.</p></div>
+    <div class="team">
+<div class="member glass tilt lead-role" style="--c1:#2fa865;--c2:#1f7a5a"><div class="avatar">SP</div><h3>Mr. Santu Pal</h3><div class="role">President</div></div>
+<div class="member glass tilt" style="--c1:#5cc98a;--c2:#2fa865"><div class="avatar">TD</div><h3>Mr. Tamal Kumar Das</h3><div class="role">Vice President</div></div>
+<div class="member glass tilt" style="--c1:#1f7a5a;--c2:#7fd6a8"><div class="avatar">SP</div><h3>Mr. Satish Prasad</h3><div class="role">Vice President</div></div>
+<div class="member glass tilt" style="--c1:#9ed36a;--c2:#3f9f58"><div class="avatar">PM</div><h3>Mr. Pralay Mondal</h3><div class="role">Secretary</div></div>
+<div class="member glass tilt" style="--c1:#2fa865;--c2:#1f7a5a"><div class="avatar">NB</div><h3>Miss Nairita Bhadra</h3><div class="role">Asst. Secretary</div></div>
+<div class="member glass tilt" style="--c1:#5cc98a;--c2:#2fa865"><div class="avatar">CR</div><h3>Mr. Chandra Sekhar Roy</h3><div class="role">Treasurer</div></div>
+<div class="member glass tilt" style="--c1:#1f7a5a;--c2:#7fd6a8"><div class="avatar">NC</div><h3>Mr. Nimai Chhaiyal</h3><div class="role">Asst. Treasurer</div></div>
+<div class="member glass tilt" style="--c1:#9ed36a;--c2:#3f9f58"><div class="avatar">PA</div><h3>Mr. Pritam Adhikary</h3><div class="role">Member</div></div>
+<div class="member glass tilt" style="--c1:#2fa865;--c2:#1f7a5a"><div class="avatar">SS</div><h3>Mr. Subham Sarkar</h3><div class="role">Member</div></div>
+<div class="member glass tilt" style="--c1:#5cc98a;--c2:#2fa865"><div class="avatar">MA</div><h3>Mr. Mukesh Agarwal</h3><div class="role">Member</div></div>
+    </div>
+    <div class="flow" aria-label="Registration workflow">
+      <span class="glass">1 · Application</span><i>→</i><span class="glass">2 · Verification</span><i>→</i><span class="glass">3 · Committee approval</span><i>→</i><span class="glass">4 · Membership activated</span>
+    </div>
+    <div class="apply glass tilt">
+      <div class="apply-text">
+        <div class="eyebrow">Apply online</div>
+        <h3>Start your application on FPAA Connect 2.0</h3>
+        <p>Sign in to the official portal to apply for membership, track your application and access member services.</p>
+        <span class="url">fpaa-connect.vercel.app</span>
+      </div>
+      <a class="btn btn-prime apply-btn" href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener">Sign in &amp; apply →</a>
+    </div>
+  </div>
+</section>
+
+<section id="scheme">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Educate · Empower · Enrich</div><h2>Sponsored Scheme</h2><p>Three alumni-supported initiatives for education, technical excellence and youth skill development at Falakata Polytechnic.</p></div>
+    <div class="schemes"><article class="scheme glass tilt">
+  <div class="top"><img class="por" src="assets/img-d864927b05.jpg" alt=""><div><div class="cat">Scholarship · Active</div><h3>Savitribai Fule Excellence Scholarship</h3><div class="bn">সাবিত্রীবাই ফুলে উৎকর্ষ বৃত্তি</div></div></div>
+  <p>Financial help for meritorious, financially disadvantaged female students in 2nd year of a full-time diploma at Falakata Polytechnic.</p>
+  <div class="chips"><span>₹12,000 / year</span><span>75% merit</span><span>Income ≤ ₹1.75 lakh</span><span>Female students</span></div>
+  <details><summary>Eligibility, documents and selection</summary><dl>
+    <div><dt>Eligibility</dt><dd>Female students admitted to 2nd year; minimum 75% aggregate in 1st and 2nd semester board exams; gross annual family income up to ₹1,75,000; not receiving another major recurring central or state scholarship.</dd></div>
+    <div><dt>Benefit</dt><dd>₹12,000 per year, extendable to the end of 3rd year on renewal. First-year amount paid in two half-yearly DBT instalments.</dd></div>
+    <div><dt>Documents</dt><dd>1st and 2nd semester mark sheets and Class 10/12 certificate; college admission letter and current fee receipt; valid income certificate; proof of identity and domicile; bank passbook or cancelled cheque in the student's name, linked with Aadhaar for DBT.</dd></div>
+    <div><dt>Selection</dt><dd>Screening for completeness and authenticity, then ranking by academic performance and income. A provisional list is followed by a 10-day grievance period before the final list.</dd></div>
+    <div><dt>Renewal</dt><dd>At least 70% aggregate in the 4th semester board exam and at least 75% attendance through 2nd year, with updated fee receipts and mark sheets.</dd></div>
+  </dl></details>
+</article><article class="scheme glass tilt">
+  <div class="top"><img class="por" src="assets/img-ef34e2005a.jpg" alt=""><div><div class="cat">Scholarship · Active</div><h3>Sir M. Visvesvaraya Excellence Scholarship</h3><div class="bn">স্যার এম. বিশ্বেশ্বরায় উৎকর্ষ বৃত্তি</div></div></div>
+  <p>Financial help for meritorious, financially disadvantaged male students in 2nd year of a full-time diploma at Falakata Polytechnic.</p>
+  <div class="chips"><span>₹12,000 / year</span><span>75% merit</span><span>Income ≤ ₹1.75 lakh</span><span>Male students</span></div>
+  <details><summary>Eligibility, documents and selection</summary><dl>
+    <div><dt>Eligibility</dt><dd>Male students admitted to 2nd year; minimum 75% aggregate in 1st and 2nd semester board exams; gross annual family income up to ₹1,75,000; not receiving another major recurring central or state scholarship.</dd></div>
+    <div><dt>Benefit</dt><dd>₹12,000 per year, extendable to the end of 3rd year on renewal. First-year amount paid in two half-yearly DBT instalments.</dd></div>
+    <div><dt>Documents</dt><dd>1st and 2nd semester mark sheets and Class 10/12 certificate; college admission letter and current fee receipt; valid income certificate; proof of identity and domicile; bank passbook or cancelled cheque in the student's name, linked with Aadhaar for DBT.</dd></div>
+    <div><dt>Selection</dt><dd>Screening for completeness and authenticity, then ranking by academic performance and income. A provisional list is followed by a 10-day grievance period before the final list.</dd></div>
+    <div><dt>Renewal</dt><dd>At least 70% aggregate in the 4th semester board exam and at least 75% attendance through 2nd year, with updated fee receipts and mark sheets.</dd></div>
+  </dl></details>
+</article><article class="scheme glass tilt">
+  <div class="top"><img class="por" src="assets/img-0a1c88e873.jpg" alt=""><div><div class="cat">Skill development · Active</div><h3>Dr. A.P.J. Abdul Kalam Youth Skill Development Programme</h3><div class="bn">ড. এ. পি. জে. আব্দুল কালাম যুব দক্ষতা উন্নয়ন কর্মসূচি</div></div></div>
+  <p>Professional readiness training that bridges classroom learning and industry expectations through technical skills, soft skills and professional ethics.</p>
+  <div class="chips"><span>Technical + soft skills</span><span>Projects</span><span>Mock interviews</span><span>Certificate</span></div>
+  <details><summary>Eligibility, evaluation and certification</summary><dl>
+    <div><dt>Eligibility</dt><dd>Open to Falakata Polytechnic students. Minimum 75% attendance across technical, soft-skills and project modules, with active participation and professional conduct.</dd></div>
+    <div><dt>What you get</dt><dd>Technical and soft-skills training, project exposure, mock interviews, portfolio development and a Professional Readiness Certificate.</dd></div>
+    <div><dt>Evaluation</dt><dd>Continuous assessment through practical assignments, project milestones, quizzes and peer evaluation.</dd></div>
+    <div><dt>Certification</dt><dd>85% cumulative attendance, completed assignments and capstone with at least 60% aggregate, good conduct, mock interviews and portfolio submission.</dd></div>
+  </dl></details>
+</article></div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Learning</div><h2>Learning resources for students</h2><p>Short video lessons for each department, plus free, trusted places to study further.</p></div>
+    <h3 class="subh">Video lessons by department</h3>
+    <div class="vgrid">
+<a class="vbox glass tilt" href="https://youtube.com/shorts/jRmI11WnzNg?si=mpC4PsgfKbbnoKSR" target="_blank" rel="noopener" aria-label="Watch Thermodynamics video for Mechanical on YouTube">
+  <div class="vthumb"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gMec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f7a5a"/><stop offset="1" stop-color="#5cc98a"/></linearGradient></defs><rect width="320" height="200" fill="url(#gMec)"/><rect x="120" y="40" width="80" height="110" rx="6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="126" y="70" width="68" height="18" rx="3" fill="rgba(255,255,255,.85)"/><line x1="160" y1="88" x2="160" y2="150" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M130 170c6-10 14-10 14-20m16 20c6-10 14-10 14-20m16 20c6-10 14-10 14-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M60 60h40m-40 25h40m-40 25h40" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><circle cx="250" cy="70" r="18" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M250 58v12l8 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="badge">YouTube Short</span></div>
+  <div class="vbody"><span class="k">Mechanical engineering</span><h3>Thermodynamics</h3><span class="host">Watch on YouTube ↗</span></div></a>
+<a class="vbox glass tilt" href="https://youtube.com/shorts/fSMjrQzeQnM?si=XbgV78obYt6eQo_p" target="_blank" rel="noopener" aria-label="Watch Transformer video for Electrical on YouTube">
+  <div class="vthumb"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gEle" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fa865"/><stop offset="1" stop-color="#9ed36a"/></linearGradient></defs><rect width="320" height="200" fill="url(#gEle)"/><rect x="95" y="45" width="130" height="110" rx="8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="125" y="72" width="70" height="56" rx="4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/><path d="M95 70c-18 0-18 10 0 10s18 10 0 10-18 10 0 10 18 10 0 10-18 10 0 10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M225 70c18 0 18 8 0 8s18 8 0 8-18 8 0 8 18 8 0 8-18 8 0 8 18 8 0 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 75h40m-40 50h40m160-50h40m-40 50h40" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="badge">YouTube Short</span></div>
+  <div class="vbody"><span class="k">Electrical engineering</span><h3>Transformer</h3><span class="host">Watch on YouTube ↗</span></div></a>
+<div class="vbox glass soon">
+  <div class="vthumb"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gCiv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f9f58"/><stop offset="1" stop-color="#7fd6a8"/></linearGradient></defs><rect width="320" height="200" fill="url(#gCiv)"/><path d="M30 150h260" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 150V70m200 80V70" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 70c40 50 160 50 200 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M90 150v-50m35 50v-37m35 37v-33m35 33v-37m35 37v-50" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/><path d="M30 110h260" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/></svg><span class="badge">Coming soon</span></div>
+  <div class="vbody"><span class="k">Civil engineering</span><h3>Video lesson coming soon</h3><span class="host muted">New lessons will be added here</span></div></div>
+<div class="vbox glass soon">
+  <div class="vthumb"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gEle" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b7a47"/><stop offset="1" stop-color="#5cc98a"/></linearGradient></defs><rect width="320" height="200" fill="url(#gEle)"/><rect x="115" y="55" width="90" height="90" rx="8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="138" y="78" width="44" height="44" rx="4" fill="rgba(255,255,255,.85)"/><path d="M135 55V30m25 25V30m25 25V30M135 145v25m25-25v25m25-25v25M115 80H85m30 20H85m30 20H85M205 80h30m-30 20h30m-30 20h30" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="85" cy="80" r="4" fill="#fff"/><circle cx="235" cy="120" r="4" fill="#fff"/></svg><span class="badge">Coming soon</span></div>
+  <div class="vbody"><span class="k">Electronics engineering</span><h3>Video lesson coming soon</h3><span class="host muted">New lessons will be added here</span></div></div>
+<div class="vbox glass soon">
+  <div class="vthumb"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gFoo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5cc98a"/><stop offset="1" stop-color="#9ed36a"/></linearGradient></defs><rect width="320" height="200" fill="url(#gFoo)"/><rect x="40" y="130" width="240" height="22" rx="11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="141" r="5" fill="#fff"/><circle cx="110" cy="141" r="5" fill="#fff"/><circle cx="160" cy="141" r="5" fill="#fff"/><circle cx="210" cy="141" r="5" fill="#fff"/><circle cx="258" cy="141" r="5" fill="#fff"/><rect x="70" y="90" width="30" height="40" rx="4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="125" y="80" width="26" height="50" rx="10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="175" y="95" width="32" height="35" rx="4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M240 128c0-30 10-45 30-50-2 22-12 38-30 50zm0 0c-4-14-12-22-24-24" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="badge">Coming soon</span></div>
+  <div class="vbody"><span class="k">Food Processing Technology</span><h3>Video lesson coming soon</h3><span class="host muted">New lessons will be added here</span></div></div>
+</div>
+    <h3 class="subh">More free resources</h3>
+    <div class="resources"><a class="rcard glass tilt" href="https://webscte.co.in/Syllabus-part1" target="_blank" rel="noopener"><span class="k">Official syllabus</span><b>WBSCTE&amp;VE curricular structure and syllabus for all diploma branches and semesters.</b><span class="host">webscte.co.in ↗</span></a><a class="rcard glass tilt" href="https://nptel.ac.in" target="_blank" rel="noopener"><span class="k">Video lectures</span><b>Free engineering courses from the IITs and IISc, with optional certification exams.</b><span class="host">nptel.ac.in ↗</span></a><a class="rcard glass tilt" href="https://swayam.gov.in" target="_blank" rel="noopener"><span class="k">Online courses</span><b>Government of India's free course platform, including diploma and skill courses.</b><span class="host">swayam.gov.in ↗</span></a><a class="rcard glass tilt" href="https://www.vlab.co.in" target="_blank" rel="noopener"><span class="k">Virtual labs</span><b>Run lab experiments online across civil, mechanical, electrical and electronics.</b><span class="host">vlab.co.in ↗</span></a><a class="rcard glass tilt" href="https://spoken-tutorial.org" target="_blank" rel="noopener"><span class="k">Software skills</span><b>Step-by-step video tutorials for free software such as Python, LibreOffice and Arduino.</b><span class="host">spoken-tutorial.org ↗</span></a><a class="rcard glass tilt" href="#scheme"><span class="k">Career readiness</span><b>Technical and soft skills, projects and mock interviews through the Dr. A.P.J. Abdul Kalam programme.</b><span class="host">Sponsored Scheme →</span></a></div>
+    
+    <p class="fine" style="margin-top:14px">Study notes and guidance from FPAA alumni will be added here by the Registration Committee.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Project Work</div><h2>Project Work activities</h2><p>Working models and prototypes from the Falakata Polytechnic project exhibition, built by students across civil, mechanical, electrical and electronics.</p></div>
+    <div class="pgrid">
+<figure class="pw glass tilt big"><img src="assets/img-b9f053c5ac.jpg" alt="Smart city and railway models on display during the project exhibition" loading="lazy"><figcaption><b>Project exhibition</b><span>Smart city and railway models on display during the project exhibition</span></figcaption></figure>
+<figure class="pw glass tilt "><img src="assets/img-b98c7e523b.jpg" alt="Students explain their smart city layout, complete with a football stadium" loading="lazy"><figcaption><b>Smart city model</b><span>Students explain their smart city layout, complete with a football stadium</span></figcaption></figure>
+<figure class="pw glass tilt "><img src="assets/img-b15ff75340.jpg" alt="A student-built quadcopter with flight controller and LiPo power pack" loading="lazy"><figcaption><b>Quadcopter drone</b><span>A student-built quadcopter with flight controller and LiPo power pack</span></figcaption></figure>
+<figure class="pw glass tilt "><img src="assets/img-d9092f31f0.jpg" alt="Working model of a hydraulic power plant, alongside a gyro-stabilised rope balancer" loading="lazy"><figcaption><b>Hydraulic power plant</b><span>Working model of a hydraulic power plant, alongside a gyro-stabilised rope balancer</span></figcaption></figure>
+<figure class="pw glass tilt "><img src="assets/img-e656b18e0c.jpg" alt="Civil engineering model of a planned road corridor, with a suspension bridge behind" loading="lazy"><figcaption><b>Town planning model</b><span>Civil engineering model of a planned road corridor, with a suspension bridge behind</span></figcaption></figure>
+<figure class="pw glass tilt "><img src="assets/img-46c6f90d10.jpg" alt="Arduino-controlled prototype with a servo-mounted solar panel" loading="lazy"><figcaption><b>Arduino solar tracker</b><span>Arduino-controlled prototype with a servo-mounted solar panel</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Membership &amp; registration</div><h2>Join FPAA</h2><p>Three membership categories for Falakata Polytechnic alumni. Every application is verified by the Registration Committee.</p></div>
+    <div>
+      <div class="cats" >
+        <div class="cat-card glass tilt" data-cat="Alumni Membership"><div style="text-align:left"><h3>Alumni Membership</h3><p>General membership for former students of Falakata Polytechnic.</p></div><strong>₹100<small>one time</small></strong></div>
+        <div class="cat-card glass tilt" data-cat="Management Committee Membership"><div style="text-align:left"><h3>Management Committee</h3><p>For alumni who want to take part in association management.</p></div><strong>₹5,000<small>one time</small></strong></div>
+        <div class="cat-card glass tilt" data-cat="Social Media Handling Membership"><div style="text-align:left"><h3>Social Media Handling</h3><p>Run the association's social media and digital communication.</p></div><strong>₹500<small>per year</small></strong></div>
+        <p class="fine">Apply by signing in at <a href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600">FPAA Connect 2.0 ↗</a>. Fees are paid by card through the Association's authorised POS facility and verified by the Finance Committee before approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Contact</div><h2>Reach FPAA</h2></div>
+    <div class="contact">
+      <div class="glass tilt"><span class="k">Location</span><span>Falakata Polytechnic<br>Falakata, Alipurduar<br>West Bengal, India</span></div>
+      <div class="glass tilt"><span class="k">Email</span><span style="user-select:all">falakatapolytechnicalumni@gmail.com</span><span class="fine" style="margin-top:6px">For membership, scheme or support questions.</span></div>
+      <div class="glass tilt"><span class="k">Registration</span><span>Regd. No. S0058184 of 2025-26</span><span class="fine" style="margin-top:6px">Falakata Polytechnic, Govt. of West Bengal · Estd 2001</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+
+<button type="button" class="enq-fab" id="enqOpen" aria-expanded="false" aria-controls="enqPanel"><span aria-hidden="true">✉</span> Enquiry</button>
+<div class="enq-panel glass" id="enqPanel" hidden role="dialog" aria-labelledby="enqTitle">
+  <div class="enq-head"><div><div class="eyebrow">FPAA Connect 2.0</div><h3 id="enqTitle">Send an enquiry</h3></div><button type="button" class="enq-x" id="enqClose" aria-label="Close enquiry">×</button></div>
+  <form id="enqForm" novalidate>
+    <label for="eName">Name<input id="eName" autocomplete="name"></label>
+    <label for="eEmail">Email<input id="eEmail" type="email" autocomplete="email"></label>
+    <label for="ePhone">Mobile <span class="opt">(optional)</span><input id="ePhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
+    <label for="eTopic">Topic<select id="eTopic"><option>Membership</option><option>Sponsored Scheme</option><option>Learning resources</option><option>Project work</option><option>Other</option></select></label>
+    <label for="eMsg">Message<textarea id="eMsg" rows="3"></textarea></label>
+    <button class="btn btn-prime" type="submit" id="eSend">Send enquiry</button>
+    <div class="toast" id="eStatus" hidden></div>
+  </form>
+  <p class="fine">Goes to <span style="user-select:all;color:var(--deep);font-weight:600">falakatapolytechnicalumni@gmail.com</span></p>
+</div>
+<footer><div class="wrap"><div class="glass"><span>© 2026 FPAA Connect 2.0 · Falakata Polytechnic Alumni Association · Regd. No. S0058184 of 2025-26</span><span>Together for a stronger tomorrow · Always a Falakatian</span></div></div></footer>
+
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* ---------- MorphFlow: low-res metaball field, upscaled + blurred ---------- */
+const cv=document.getElementById('flow'),ctx=cv.getContext('2d');
+const S=7; let W,H,img;
+const blobs=[
+  {c:[120,208,140], r:.20, x:.22,y:.30, ax:.12,ay:.10, sp:.00021, ph:0},
+  {c:[168,228,150], r:.18, x:.72,y:.26, ax:.14,ay:.12, sp:.00017, ph:2},
+  {c:[110,205,175], r:.15, x:.60,y:.72, ax:.16,ay:.10, sp:.00025, ph:4},
+  {c:[200,236,140], r:.10, x:.30,y:.78, ax:.10,ay:.12, sp:.00019, ph:1},
+  {c:[140,220,190],r:.09, x:.86,y:.62, ax:.08,ay:.14, sp:.00023, ph:3},
+  {c:[95,190,125], r:.11, x:.5, y:.5,  ax:0,  ay:0,   sp:0,      ph:0, cursor:true}
+];
+let px=.5,py=.45,tx=.5,ty=.45;
+function size(){W=Math.ceil(innerWidth/S);H=Math.ceil(innerHeight/S);cv.width=W;cv.height=H;img=ctx.createImageData(W,H)}
+size();addEventListener('resize',size);
+addEventListener('pointermove',e=>{tx=e.clientX/innerWidth;ty=e.clientY/innerHeight},{passive:true});
+function frame(t){
+  px+=(tx-px)*.05;py+=(ty-py)*.05;
+  const m=Math.min(W,H), asp=W/H, P=[];
+  for(const b of blobs){
+    let x,y;
+    if(b.cursor){x=px;y=py}
+    else{x=b.x+Math.sin(t*b.sp+b.ph)*b.ax;y=b.y+Math.cos(t*b.sp*1.3+b.ph)*b.ay}
+    const rr=b.r*m*(1+.12*Math.sin(t*.0006+b.ph));
+    P.push([x*W,y*H,rr*rr,b.c]);
+  }
+  const d=img.data;let i=0;
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+    let f=0,r=0,g=0,bl=0;
+    for(const p of P){const dx=x-p[0],dy=y-p[1];const w=p[2]/(dx*dx+dy*dy+1);f+=w;r+=w*p[3][0];g+=w*p[3][1];bl+=w*p[3][2]}
+    r/=f;g/=f;bl/=f;
+    let a;
+    if(f>=1){a=.78;const rim=Math.max(0,1-(f-1)*2.2);r+=rim*60;g+=rim*50;bl+=rim*60;} // liquid rim highlight
+    else{a=Math.pow(f,3)*.55}
+    d[i]=238+(r-238)*a;d[i+1]=248+(g-248)*a;d[i+2]=239+(bl-239)*a;d[i+3]=255;i+=4;
+  }
+  ctx.putImageData(img,0,0);
+  if(!reduce)requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* ---------- 3D tilt + specular sheen on glass ---------- */
+if(fine&&!reduce){
+  document.querySelectorAll('.tilt').forEach(el=>{
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      const k=Math.min(8,1400/Math.max(r.width,r.height));
+      el.classList.add('live');
+      el.style.setProperty('--ry',((x-.5)*k)+'deg');el.style.setProperty('--rx',((.5-y)*k)+'deg');
+      el.style.setProperty('--mx',(x*100)+'%');el.style.setProperty('--my',(y*100)+'%');
+    });
+    el.addEventListener('pointerleave',()=>{el.classList.remove('live');el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+  });
+  const stack=document.getElementById('stack');
+  addEventListener('pointermove',e=>{
+    const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    stack.style.setProperty('--sy',(-18+x*44)+'deg');stack.style.setProperty('--sx',(10-y*30)+'deg');stack.style.setProperty('--gx',(50+x*80)+'%');stack.style.setProperty('--gy',(50+y*80)+'%');
+  },{passive:true});
+}
+
+/* ---------- nav ---------- */
+const btn=document.getElementById('menuBtn'),nav=document.getElementById('mainNav'),mq=matchMedia('(max-width:880px)');
+function sync(){const open=btn.getAttribute('aria-expanded')==='true';nav.hidden=mq.matches&&!open;nav.classList.toggle('glass',mq.matches)}
+btn.addEventListener('click',()=>{btn.setAttribute('aria-expanded',btn.getAttribute('aria-expanded')!=='true');sync()});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');sync()}});
+mq.addEventListener('change',sync);sync();
+
+
+/* ---------- enquiry box ---------- */
+const EMAIL='falakatapolytechnicalumni@gmail.com';
+const fab=document.getElementById('enqOpen'),panel=document.getElementById('enqPanel'),closeB=document.getElementById('enqClose');
+function openEnq(o){panel.hidden=!o;fab.setAttribute('aria-expanded',o);if(o)document.getElementById('eName').focus();else fab.focus()}
+fab.addEventListener('click',()=>openEnq(true));closeB.addEventListener('click',()=>openEnq(false));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)openEnq(false)});
+const ef=document.getElementById('enqForm'),st=document.getElementById('eStatus'),send=document.getElementById('eSend');
+function say(t){st.hidden=false;st.textContent=t}
+ef.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const name=v('eName'),email=v('eEmail'),phone=v('ePhone'),topic=v('eTopic'),msg=v('eMsg');
+  if(!name){say('Enter your name.');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){say('Enter a valid email address so we can reply.');return}
+  if(msg.length<5){say('Write a short message about your enquiry.');return}
+  send.disabled=true;send.textContent='Sending…';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/'+EMAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({name,email,phone,topic,message:msg,_subject:'FPAA Connect 2.0 enquiry: '+topic,_replyto:email,_template:'table',_captcha:'false'})});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||String(j.success)!=='true')throw new Error('not sent');
+    ef.reset();say('Sent. The FPAA team will reply to '+email+'.');
+  }catch(err){
+    st.hidden=false;st.innerHTML='';
+    const p=document.createElement('p');p.textContent='This enquiry could not be sent from here. Please email us directly at '+EMAIL+'.';st.appendChild(p);
+    const row=document.createElement('div');row.className='enq-fallback';
+    const cp=document.createElement('button');cp.type='button';cp.textContent='Copy email address';
+    cp.addEventListener('click',()=>{const done=()=>cp.textContent='Copied';navigator.clipboard?.writeText(EMAIL).then(done,()=>{})});
+    const a=document.createElement('a');a.textContent='Open in mail app';
+    a.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('FPAA Connect 2.0 enquiry: '+topic)+'&body='+encodeURIComponent(msg+'\n\n'+name+(phone?'\n'+phone:'')+'\n'+email);
+    row.append(cp,a);st.appendChild(row);
+  }finally{send.disabled=false;send.textContent='Send enquiry'}
+});
+
+})();
+</script>
+</body>
+</html>

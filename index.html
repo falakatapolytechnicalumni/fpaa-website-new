@@ -388,6 +388,18 @@ nav a[aria-current="true"]{background:linear-gradient(180deg,#3d8bff,#1463e6)!im
 .enq-fab{background:linear-gradient(180deg,#1f6fe8,#0d4fc4)!important}
 .medal .depth i{background:linear-gradient(135deg,#d9b25a,#6e5a1c 45%,#0c2d63)!important}
 .medal .halo{background:radial-gradient(circle,rgba(120,180,255,.5),transparent 65%)!important}
+
+/* ---- mobile menu: solid panel + dimmed page ---- */
+.nav-dim{position:fixed;inset:0;z-index:49;background:rgba(10,30,70,.35);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+@media (max-width:880px){
+  #mainNav{background:#ffffff!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:1px solid rgba(47,125,246,.35)!important;box-shadow:0 24px 50px -12px rgba(10,35,85,.45)!important;padding:8px!important;border-radius:20px!important}
+  #mainNav::before,#mainNav::after{display:none!important}
+  #mainNav li+li{border-top:1px solid #e3ecfb}
+  #mainNav a{color:#0f2340!important;font-size:1.02rem;font-weight:600;padding:14px 16px!important;border-radius:12px}
+  #mainNav a:active{background:#e8f1ff}
+  #mainNav a[aria-current="true"]{background:linear-gradient(180deg,#3d8bff,#1463e6)!important;color:#fff!important}
+  .menu-btn[aria-expanded="true"]{background:#1463e6!important;color:#fff!important;border-color:#1463e6!important}
+}
 </style>
 
 <canvas id="flow" aria-hidden="true"></canvas>
@@ -715,7 +727,9 @@ if(fine&&!reduce){
 
 /* ---------- nav ---------- */
 const btn=document.getElementById('menuBtn'),nav=document.getElementById('mainNav'),mq=matchMedia('(max-width:880px)');
-function sync(){const open=btn.getAttribute('aria-expanded')==='true';nav.hidden=mq.matches&&!open;nav.classList.toggle('glass',mq.matches)}
+const dim=document.createElement('div');dim.className='nav-dim';dim.hidden=true;document.body.appendChild(dim);
+dim.addEventListener('click',()=>{btn.setAttribute('aria-expanded','false');sync()});
+function sync(){const open=btn.getAttribute('aria-expanded')==='true';nav.hidden=mq.matches&&!open;nav.classList.toggle('glass',mq.matches);dim.hidden=!(mq.matches&&open);btn.textContent=(mq.matches&&open)?'Close':'Menu'}
 btn.addEventListener('click',()=>{btn.setAttribute('aria-expanded',btn.getAttribute('aria-expanded')!=='true');sync()});
 nav.addEventListener('click',e=>{if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');sync()}});
 mq.addEventListener('change',sync);sync();
@@ -762,7 +776,7 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 const navLinks=[...document.querySelectorAll('#mainNav a')];
 const secs=navLinks.map(a=>[a,document.getElementById(a.getAttribute('href').slice(1))]).filter(x=>x[1]);
 function markActive(){
-  const line=hdr.getBoundingClientRect().bottom+40;let cur=null;
+  const line=hdr.getBoundingClientRect().bottom+70;let cur=null;
   for(const [a,el] of secs){if(el.getBoundingClientRect().top<=line)cur=a}
   if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1][0];
   navLinks.forEach(a=>a===cur?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'));

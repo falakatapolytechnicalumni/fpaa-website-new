@@ -35,7 +35,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:clip}
 h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0;font-weight:700}
 h2{font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.01em}
 h3{font-size:1.02rem;font-weight:500;letter-spacing:.01em}
@@ -80,7 +80,11 @@ main,header,footer{position:relative;z-index:2}
 .btn:hover{filter:brightness(1.08)}
 
 /* ---- header ---- */
-header.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);margin-top:12px;padding-inline:12px}
+header.top{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:50;padding-inline:12px;transition:top .3s}
+header.top .bar{transition:padding .3s,box-shadow .3s}
+header.top.scrolled{top:calc(env(safe-area-inset-top,0px) + 6px)}
+header.top.scrolled .bar{padding-block:6px;box-shadow:inset 0 1px 0 var(--edge-hi),0 18px 40px -18px rgba(27,90,55,.45)}
+nav a[aria-current="true"]{color:#fff;background:linear-gradient(135deg,#2fa865,#1b7a47)}
 .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 14px;border-radius:999px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .seal{width:52px;height:52px;border-radius:50%;overflow:hidden;background:#fff!important;box-shadow:0 0 0 2px #1b7a47,0 6px 14px -4px rgba(15,60,35,.45)!important;display:grid;place-items:center;font-family:var(--display);font-size:.8rem;color:#fff;
@@ -99,7 +103,7 @@ nav a:hover{color:var(--ink);background:rgba(255,255,255,.6)}
 }
 
 /* ---- hero ---- */
-.hero{padding-block:72px 40px}
+.hero{padding-block:170px 40px}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(2.1rem,5.2vw,3.9rem);letter-spacing:-.02em;margin-block:16px 20px}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal),var(--blue) 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -148,7 +152,7 @@ nav a:hover{color:var(--ink);background:rgba(255,255,255,.6)}
 
 /* ---- sections ---- */
 section{padding-block:64px}
-section[id]{scroll-margin-top:100px}
+section[id]{scroll-margin-top:120px}
 .head{display:grid;gap:10px;margin-bottom:32px;max-width:640px}
 .head p{color:var(--muted)}
 .note{color:var(--faint);font-size:.85rem;font-style:italic}
@@ -350,6 +354,17 @@ footer .glass{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 @media (max-width:1100px){.vgrid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){.vgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:440px){.vgrid{grid-template-columns:1fr}}
+
+header.top.scrolled .bar{background:rgba(255,255,255,.78)}
+.contact>*{min-width:0}
+.contact span{overflow-wrap:anywhere}
+@media (max-width:600px){
+  .brand small:not(.regd){display:none}
+  .brand b{font-size:.95rem}
+  .brand .regd{font-size:.66rem;white-space:nowrap}
+  .seal{width:44px!important;height:44px!important}
+  .hero{padding-top:130px}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .medal,.medal .sheen,.ph .blob{animation:none}
@@ -715,6 +730,15 @@ ef.addEventListener('submit',async e=>{
     row.append(cp,a);st.appendChild(row);
   }finally{send.disabled=false;send.textContent='Send enquiry'}
 });
+
+/* ---------- floating header: shrink on scroll + active section ---------- */
+const hdr=document.querySelector('header.top');
+const onScroll=()=>hdr.classList.toggle('scrolled',scrollY>40);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const navLinks=[...document.querySelectorAll('#mainNav a')];
+const secMap=new Map(navLinks.map(a=>[a.getAttribute('href').slice(1),a]));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.removeAttribute('aria-current'));const a=secMap.get(e.target.id);if(a)a.setAttribute('aria-current','true')}})},{rootMargin:'-45% 0px -50% 0px'});
+secMap.forEach((a,id)=>{const el=document.getElementById(id);if(el)io.observe(el)});
 
 })();
 </script>

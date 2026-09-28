@@ -367,6 +367,9 @@ header.top{isolation:isolate}
   .seal{width:44px!important;height:44px!important}
   .hero{padding-top:130px}
 }
+.apply-btn.locked{background:rgba(255,255,255,.7);color:var(--muted);border:1px dashed rgba(27,122,71,.45);cursor:not-allowed;box-shadow:none}
+.apply-btn.locked svg{color:var(--deep)}
+.signin-soon{color:var(--deep);font-weight:600}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .medal,.medal .sheen,.ph .blob{animation:none}
@@ -495,9 +498,9 @@ header.top{isolation:isolate}
         <div class="eyebrow">Apply online</div>
         <h3>Start your application on FPAA Connect 2.0</h3>
         <p>Sign in to the official portal to apply for membership, track your application and access member services.</p>
-        <span class="url">fpaa-connect.vercel.app</span>
+        <span class="url signin-open">fpaa-connect.vercel.app</span><span class="signin-soon" hidden>Online sign-in opens soon. Watch this page for the announcement.</span>
       </div>
-      <a class="btn btn-prime apply-btn" href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener">Sign in &amp; apply →</a>
+      <a class="btn btn-prime apply-btn signin-open" href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener">Sign in &amp; apply →</a><span class="btn apply-btn locked signin-soon" hidden aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="5" y="10" width="14" height="10" rx="2" fill="currentColor"/></svg>Sign-in opening soon</span>
     </div>
   </div>
 </section>
@@ -591,7 +594,7 @@ header.top{isolation:isolate}
         <div class="cat-card glass tilt" data-cat="Alumni Membership"><div style="text-align:left"><h3>Alumni Membership</h3><p>General membership for former students of Falakata Polytechnic.</p></div><strong>₹100<small>one time</small></strong></div>
         <div class="cat-card glass tilt" data-cat="Management Committee Membership"><div style="text-align:left"><h3>Management Committee</h3><p>For alumni who want to take part in association management.</p></div><strong>₹5,000<small>one time</small></strong></div>
         <div class="cat-card glass tilt" data-cat="Social Media Handling Membership"><div style="text-align:left"><h3>Social Media Handling</h3><p>Run the association's social media and digital communication.</p></div><strong>₹500<small>per year</small></strong></div>
-        <p class="fine">Apply by signing in at <a href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600">FPAA Connect 2.0 ↗</a>. Fees are paid by card through the Association's authorised POS facility and verified by the Finance Committee before approval.</p>
+        <p class="fine"><span class="signin-open">Apply by signing in at <a href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600">FPAA Connect 2.0 ↗</a>.</span><span class="signin-soon" hidden>Online applications through FPAA Connect 2.0 open soon.</span> Fees are paid by card through the Association's authorised POS facility and verified by the Finance Committee before approval.</p>
       </div>
     </div>
   </div>
@@ -629,6 +632,12 @@ header.top{isolation:isolate}
 
 <script>
 (()=>{
+/* ---------- member sign-in switch ----------
+   To OPEN sign-in for everyone, change false to true below. */
+const SIGNIN_OPEN = false;
+document.querySelectorAll('.signin-open').forEach(el=>{el.hidden=!SIGNIN_OPEN});
+document.querySelectorAll('.signin-soon').forEach(el=>{el.hidden=SIGNIN_OPEN});
+
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 

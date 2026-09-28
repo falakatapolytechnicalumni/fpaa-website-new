@@ -12,3 +12,4 @@ Public website of the Falakata Polytechnic Alumni Association (Regd. No. S005818
 - `favicon.png`, `og-image.jpg` — browser icon and link-preview image
 - `robots.txt`, `sitemap.xml` — search engine files
 - `vercel.json` — hosting settings
+

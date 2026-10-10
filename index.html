@@ -465,6 +465,29 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
 .soon-panel{color:var(--ink)!important;font-weight:400!important}
 .soon-badge{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:999px;background:linear-gradient(180deg,#ffe27a,#f5b800);color:#3a2a00}
 .notice b.signin-soon{background:linear-gradient(180deg,#ffe27a,#f5b800)!important;color:#3a2a00!important}
+
+/* ---- Events ---- */
+.evx-list{display:grid;gap:16px;position:relative}
+.evx{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:22px 26px 22px 22px}
+.evx-date{display:grid;justify-items:center;align-content:center;gap:2px;height:120px;border-radius:20px;color:#fff;background:linear-gradient(160deg,#3d8bff,#1557c9);box-shadow:inset 0 2px 0 rgba(255,255,255,.4),inset 0 -4px 0 rgba(0,0,0,.18),0 0 0 3px var(--gold-soft,#ffd84d),0 14px 26px -12px rgba(20,55,120,.5)}
+.evx-date b{font-family:var(--display);font-size:2.6rem;line-height:1;font-variant-numeric:tabular-nums}
+.evx-date span{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.evx-body{display:grid;gap:8px}
+.evx-meta{display:flex;flex-wrap:wrap;gap:8px}
+.evx-status,.evx-kind{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.evx-status{background:linear-gradient(180deg,#ffe27a,#f5b800);color:#3a2a00}
+.evx-kind{background:#dbe8ff;color:#0f3a9e}
+.evx h3{font-size:1.2rem;font-weight:700;color:#0f2340}
+.evx p{color:var(--muted)}
+.evx-when{display:flex;align-items:center;gap:8px;font-weight:700;color:#0f3a9e;font-size:.95rem}
+.evx-when svg{width:18px;height:18px;flex:none}
+.evx-count{font-variant-numeric:tabular-nums;font-weight:600;color:#1557c9;font-size:.9rem}
+.evx-count:empty{display:none}
+.evx.is-live .evx-status{background:linear-gradient(180deg,#5ad08a,#1f9d55);color:#fff}
+.evx.is-done{opacity:.72}
+.evx.is-done .evx-status{background:#e3e8f1;color:#46597a}
+.evx.is-done .evx-date{background:linear-gradient(160deg,#9db3d6,#6d86ad);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 0 0 3px #dbe3f0}
+@media (max-width:620px){.evx{grid-template-columns:84px 1fr;gap:16px;padding:18px}.evx-date{height:88px;border-radius:16px}.evx-date b{font-size:1.9rem}.evx-date span{font-size:.68rem}}
 </style>
 
 <canvas id="flow" aria-hidden="true"></canvas>
@@ -482,6 +505,7 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
         <li><a href="#about">About</a></li>
         <li><a href="#goals">Goals</a></li>
         <li><a href="#committee">Committee</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#scheme">Sponsored Scheme</a></li>
         <li><a href="#learning">Learning</a></li>
         <li><a href="#join">Join</a></li>
@@ -606,6 +630,44 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
         <span class="url signin-open">fpaa-connect.vercel.app</span><span class="signin-soon" hidden>Online sign-in opens soon. Watch this page for the announcement.</span>
       </div>
       <a class="btn btn-prime apply-btn signin-open" href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener">Sign in &amp; apply →</a><span class="btn apply-btn locked signin-soon" hidden aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="5" y="10" width="14" height="10" rx="2" fill="currentColor"/></svg>Sign-in opening soon</span>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Events</div><h2>Upcoming events</h2><p>Official FPAA programmes and announcements. Times are in Indian Standard Time.</p></div>
+    <div class="evx-list">
+      <article class="evx glass tilt" data-at="2026-10-10T21:00:00+05:30">
+        <div class="evx-date"><b>10</b><span>Oct 2026</span></div>
+        <div class="evx-body">
+          <div class="evx-meta"><span class="evx-status">Upcoming</span><span class="evx-kind">Online</span></div>
+          <h3>Release of the official website</h3>
+          <p>Launch of FPAA Connect 2.0 at www.fpaaconnect.co.in, the official website of the Falakata Polytechnic Alumni Association.</p>
+          <div class="evx-when"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sat, 10 Oct 2026 · 9:00 PM IST</div>
+          <div class="evx-count" aria-live="polite"></div>
+        </div>
+      </article>
+      <article class="evx glass tilt" data-at="2026-10-15T21:00:00+05:30">
+        <div class="evx-date"><b>15</b><span>Oct 2026</span></div>
+        <div class="evx-body">
+          <div class="evx-meta"><span class="evx-status">Upcoming</span><span class="evx-kind">General Body Meeting</span></div>
+          <h3>General Body Meeting: Reunion Day of the Silver Jubilee</h3>
+          <p>General Body Meeting to plan the Reunion Day of the Silver Jubilee celebration, marking 25 years of Falakata Polytechnic.</p>
+          <div class="evx-when"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Thu, 15 Oct 2026 · 9:00 PM IST</div>
+          <div class="evx-count" aria-live="polite"></div>
+        </div>
+      </article>
+      <article class="evx glass tilt" data-at="2026-11-08T21:00:00+05:30">
+        <div class="evx-date"><b>08</b><span>Nov 2026</span></div>
+        <div class="evx-body">
+          <div class="evx-meta"><span class="evx-status">Upcoming</span><span class="evx-kind">Online</span></div>
+          <h3>Release of the official application</h3>
+          <p>Launch of the FPAA Connect 2.0 application for alumni registration, membership and member services.</p>
+          <div class="evx-when"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sun, 08 Nov 2026 · 9:00 PM IST</div>
+          <div class="evx-count" aria-live="polite"></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -877,6 +939,26 @@ function markActive(){
 }
 let raf=0;addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;markActive()})},{passive:true});
 addEventListener('resize',markActive);markActive();
+
+/* ---------- events: status + countdown ---------- */
+const evs=[...document.querySelectorAll('.evx')];
+function evTick(){
+  const now=Date.now();let nextSet=false;
+  evs.forEach(el=>{
+    const t=Date.parse(el.dataset.at),st=el.querySelector('.evx-status'),cd=el.querySelector('.evx-count');
+    const end=t+3*3600e3;
+    el.classList.toggle('is-done',now>end);el.classList.toggle('is-live',now>=t&&now<=end);
+    if(now>end){st.textContent='Completed';cd.textContent='';}
+    else if(now>=t){st.textContent='Happening now';cd.textContent='';}
+    else{
+      st.textContent='Upcoming';
+      if(!nextSet){nextSet=true;let d=Math.floor((t-now)/1000);const dd=Math.floor(d/86400);d%=86400;const hh=Math.floor(d/3600);d%=3600;const mm=Math.floor(d/60);
+        cd.textContent='Starts in '+(dd?dd+' day'+(dd>1?'s ':' '):'')+hh+' hr '+mm+' min';}
+      else cd.textContent='';
+    }
+  });
+}
+evTick();setInterval(evTick,30000);
 
 })();
 </script>

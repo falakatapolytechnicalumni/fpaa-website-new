@@ -458,6 +458,13 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
 .flow i{color:var(--gold)!important}
 .subh{color:#0f3a9e}
 ::selection{background:rgba(245,184,0,.35)}
+
+.soon-panel{padding:40px 32px;display:grid;justify-items:center;text-align:center;gap:12px;max-width:760px;margin:0 auto}
+.soon-panel h3{font-size:1.5rem;font-weight:700;color:#0f2340!important}
+.soon-panel p{color:var(--muted)!important;font-weight:400!important;max-width:56ch}
+.soon-panel{color:var(--ink)!important;font-weight:400!important}
+.soon-badge{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:999px;background:linear-gradient(180deg,#ffe27a,#f5b800);color:#3a2a00}
+.notice b.signin-soon{background:linear-gradient(180deg,#ffe27a,#f5b800)!important;color:#3a2a00!important}
 </style>
 
 <canvas id="flow" aria-hidden="true"></canvas>
@@ -530,7 +537,7 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
       <div><strong>5</strong><span>Departments</span></div>
       <div><strong>3</strong><span>Sponsored schemes</span></div>
     </div>
-    <div class="notice glass"><b>Open</b><span>Alumni membership registration is open. One-time fee ₹100, reviewed by the Registration Committee.</span></div>
+    <div class="notice glass"><b class="signin-open">Open</b><span class="signin-open">Alumni membership registration is open. Apply online through FPAA Connect 2.0.</span><b class="signin-soon" hidden>Coming soon</b><span class="signin-soon" hidden>Alumni membership registration opens soon. Watch this page for the announcement.</span></div>
   </div>
 </div>
 
@@ -686,14 +693,20 @@ header.top .bar{border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset
 
 <section id="join">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Membership &amp; registration</div><h2>Join FPAA</h2><p>Three membership categories for Falakata Polytechnic alumni. Every application is verified by the Registration Committee.</p></div>
-    <div>
+    <div class="head"><div class="eyebrow">Membership &amp; registration</div><h2>Join FPAA</h2><p>Membership for Falakata Polytechnic alumni. Every application is verified by the Registration Committee.</p></div>
+    <div class="signin-open">
       <div class="cats" >
         <div class="cat-card glass tilt" data-cat="Alumni Membership"><div style="text-align:left"><h3>Alumni Membership</h3><p>General membership for former students of Falakata Polytechnic.</p></div><strong>₹100<small>one time</small></strong></div>
         <div class="cat-card glass tilt" data-cat="Management Committee Membership"><div style="text-align:left"><h3>Management Committee</h3><p>For alumni who want to take part in association management.</p></div><strong>₹5,000<small>one time</small></strong></div>
         <div class="cat-card glass tilt" data-cat="Social Media Handling Membership"><div style="text-align:left"><h3>Social Media Handling</h3><p>Run the association's social media and digital communication.</p></div><strong>₹500<small>per year</small></strong></div>
         <p class="fine"><span class="signin-open">Apply by signing in at <a href="https://fpaa-connect.vercel.app/login.html" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600">FPAA Connect 2.0 ↗</a>.</span><span class="signin-soon" hidden>Online applications through FPAA Connect 2.0 open soon.</span> Fees are paid by card through the Association's authorised POS facility and verified by the Finance Committee before approval.</p>
       </div>
+    </div>
+    <div class="soon-panel glass signin-soon" hidden>
+      <div class="soon-badge">Coming soon</div>
+      <h3>Membership registration opens soon</h3>
+      <p>Membership categories, fees and online applications will be announced here by the Registration Committee. Follow our social pages or check back for the launch.</p>
+      <a class="btn btn-glass" href="#contact">Get updates</a>
     </div>
   </div>
 </section>
